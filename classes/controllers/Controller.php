@@ -44,7 +44,7 @@ class Controller {
 		$this->loadView( $view, $values, false );
 	}
 
-	public function renderText( $text ) {
+	public function renderToolsext( $text ) {
 		echo $text;
 	}
 
