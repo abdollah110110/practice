@@ -5,10 +5,10 @@ class Loader {
 	private static $loaded = [];
 
 	public static function load( $object ) {
-		$valid = [ 'Config', 'Router', 'DB', 'Categories' ];
+		$valid = [ 'Config', 'Router' ];
 		if ( ! in_array( $object, $valid ) ) {
 			self::load( 'Config' );
-			throw new Exception( "'{$object}' is not a valid object to load." );
+			throw new Exception( "Error Loader class: '{$object}' is not a valid object to load." );
 		}
 		if ( empty( self::$loaded[ $object ] ) ) {
 			self::$loaded[ $object ] = new $object;

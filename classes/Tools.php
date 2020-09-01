@@ -5,33 +5,33 @@ class Tools {
 		if ( is_array( $value ) ) {
 			echo '<div style="background:#eee;padding:10px;">';
 			echo '<pre>' . print_r( $value, true ) . '</pre>' . PHP_EOL;
-			echo '</div>' . PHP_EOL;
+			echo '</div><br />' . PHP_EOL;
 		}
 		elseif ( is_object( $value ) ) {
 			echo '<div style="background:#eee;padding:10px;">';
 			echo '<pre>' . print_r( $value, true ) . '</pre>' . PHP_EOL;
-			echo '</div>' . PHP_EOL;
+			echo '</div><br />' . PHP_EOL;
 		}
 		else {
 			echo '<div style="background:#eee;padding:10px;">';
 			echo '<pre>' . $value . '</pre>' . PHP_EOL;
-			echo '</div>' . PHP_EOL;
+			echo '</div><br />' . PHP_EOL;
 		}
 		if ( $exit ) {
 			exit();
 		}
 	}
 
-	public static function basePath() {
-		return str_replace( '\\', '/', dirname( dirname( __DIR__ ) ) . '/' );
+	public static function basePath( $path = '' ) {
+		return realpath( str_replace( '\\', '/', dirname( __DIR__ ) . '/' . $path ) );
 	}
 
 	public static function url() {
-		return Loader::load( 'Configs' )->homeUrl;
+		return Loader::load( 'Config' )->homeUrl;
 	}
 
-	public static function encode($string){
-		return htmlentities($string, ENT_QUOTES, 'utf-8');
+	public static function encode( $string ) {
+		return htmlentities( $string, ENT_QUOTES, 'utf-8' );
 	}
 
 }
