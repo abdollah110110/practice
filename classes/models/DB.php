@@ -37,6 +37,14 @@ class DB {
 		return $value_type;
 	}
 
+	public function selectAll() {
+		$this->connect();
+		$sql = "SELECT * FROM {$this->tableName} ORDER BY id DESC";
+		$this->stmt = $this->pdo->prepare( $sql );
+		$this->stmt->execute();
+		return $this->stmt->fetchAll( PDO::FETCH_OBJ );
+	}
+
 	public function __destruct() {
 		$this->pdo = null;
 	}

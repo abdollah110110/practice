@@ -16,3 +16,4 @@ spl_autoload_register( function($class) {
 		exit( 'Error in \'init.php\' file: not found the class: ' . $class );
 	}
 } );
+Session::start();

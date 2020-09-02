@@ -24,6 +24,7 @@ class Controller {
 		ob_start();
 		require $viewFile;
 		$content = ob_get_clean() . PHP_EOL;
+		ob_end_flush();
 		if ( $useLayout ) {
 			$layoutFile = Tools::basePath("views/layouts/{$this->layout}.php");
 			if ( ! file_exists( $layoutFile ) ) {

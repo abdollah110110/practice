@@ -17,7 +17,7 @@
 		<section class="container">
 
 			<nav class="navbar navbar-expand-lg navbar-light">
-				<a class="navbar-brand ml-4" href="#"><?= $this->config( 'title' ) ?></a>
+				<a class="navbar-brand ml-4" href="<?= Tools::url() ?>"><?= $this->config( 'title' ) ?></a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
@@ -25,10 +25,10 @@
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav ml-auto">
 						<li class="nav-item active">
-							<a class="nav-link" href="#">صفحه اصلی</a>
+							<a class="nav-link" href="<?= Tools::url() ?>">صفحه اصلی</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">لینک</a>
+							<a class="nav-link" href="<?= Tools::url('project/index') ?>">سفارش پروژه</a>
 						</li>
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -47,10 +47,10 @@
 						<button class="btn btn-primary my-2 my-sm-0" type="submit">جستجو</button>
 					</form>
 					<div class="form-inline my-2 my-lg-0">
-						<a class="nav-link" href="#">عضویت</a>
+						<a class="nav-link" href="<?= Tools::url( 'user/register' ) ?>">عضویت</a>
 						<span> / </span>
-						 <a class="nav-link" href="#">ورود</a>
-						 <a class="btn btn-danger" href="#">خروج</a>
+						<a class="nav-link" href="<?= Tools::url( 'user/login' ) ?>">ورود</a>
+						<a class="btn btn-danger" href="<?= Tools::url( 'user/logout' ) ?>">خروج</a>
 					</div class="form-inline my-2 my-lg-0">
 				</div>
 			</nav>

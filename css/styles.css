@@ -68,3 +68,16 @@
     background-color: #1B9CFC;
     border-color: #1B9CFC;
 }
+.form-control:focus {
+    border-color: rgba(161, 163, 164, 0.27);
+    box-shadow: 0 0 0 .2rem rgba(161, 163, 164, 0.27);
+}
+.has-error {
+    color: #CF000F;
+    background-color: #F5EBEB;
+    padding-bottom: .2rem;
+}
+.has-error .form-control:focus {
+    border-color: rgba(176, 3, 3, 0.24);
+    box-shadow: 0 0 0 .2rem rgba(176, 3, 3, 0.24);
+}
