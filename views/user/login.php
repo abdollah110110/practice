@@ -12,6 +12,11 @@ if ( Session::get( 'errors' ) !== null ) {
 	<div class="row justify-content-center">
 		<div class="col-md-8 col-lg-6">
 			<form action="<?= Tools::url( 'user/login' ) ?>" method="POST" class="form-horizontal bg-light p-5 mb-5">
+				<?php if(isset($errors['error'])): ?>
+				<div class="has-error p-3 text-center">
+					<?= $errors['error'] ?>
+				</div>
+				<?php endif; ?>
 				<div class="form-group row <?= (isset( $errors[ 'email' ] ) ? 'has-error' : '') ?>">
 					<label for="email" class="col-12 col-form-label text-lg-right">ایمیل:</label>
 					<div class="col-12">

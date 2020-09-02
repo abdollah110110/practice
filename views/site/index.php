@@ -1,5 +1,5 @@
 <div class="jumbotron jumbotron-fluid text-center">
-	<div class="d-flex justify-content-center align-items-center">
+	<div class="d-flex justify-content-around align-items-center">
 		<div>
 			<?php
 			$user = new Users();

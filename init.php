@@ -17,3 +17,4 @@ spl_autoload_register( function($class) {
 	}
 } );
 Session::start();
+Session::regenerateId();

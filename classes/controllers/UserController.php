@@ -17,15 +17,29 @@ class UserController extends Controller {
 			$email = Tools::escape( $_POST[ 'email' ] );
 			$password = $_POST[ 'password' ];
 			$user = (new Users() )->selectEmail( [ 'email' => $email, 'active' => 1 ] );
-			if( password_verify( $password, $user->password )){
-				Session::set('login', true);
-				Session::set('userid', $user->id);
-				Session::set('username', $user->name);
-				Session::set('isadmin', $user->is_admin);
+			if ( password_verify( $password, $user->password ) ) {
+				Session::set( 'login', true );
+				Session::set( 'userid', $user->id );
+				Session::set( 'username', $user->name );
+				Session::set( 'isadmin', $user->is_admin );
 				Tools::redirect();
+			}
+			else{
+				Session::set( 'errors', ['error'=>'ایمیل یا رمز عبور اشتباه است'] );
+				Tools::redirect( 'user/login' );
 			}
 		}
 		$this->render( 'login' );
+	}
+
+	public function actionLogout() {
+		if ( isset( $_POST[ 'logout' ] ) ) {
+			Session::clear( 'login' );
+			Session::clear( 'userid' );
+			Session::clear( 'username' );
+			Session::clear( 'isadmin' );
+			Tools::redirect();
+		}
 	}
 
 }

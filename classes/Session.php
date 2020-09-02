@@ -7,7 +7,7 @@ class Session {
 		}
 	}
 	public static function regenerateId() {
-		return session_regenerate_id() ;
+		session_regenerate_id() ;
 	}
 
 	public static function set( $name, $value ) {

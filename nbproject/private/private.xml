@@ -4,8 +4,10 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/wamp/www/practice/classes/controllers/UserController.php</file>
+            <file>file:/C:/wamp/www/practice/classes/models/Users.php</file>
             <file>file:/C:/wamp/www/practice/views/user/login.php</file>
-            <file>file:/C:/wamp/www/practice/views/layouts/main.php</file>
+            <file>file:/C:/wamp/www/practice/views/site/index.php</file>
+            <file>file:/C:/wamp/www/practice/classes/controllers/SiteController.php</file>
         </group>
     </open-files>
 </project-private>

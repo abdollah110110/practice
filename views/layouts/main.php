@@ -1,3 +1,6 @@
+<?php
+Session::start();
+?>
 <!DOCToolsYPE html>
 <html>
 	<head>
@@ -28,7 +31,7 @@
 							<a class="nav-link" href="<?= Tools::url() ?>">صفحه اصلی</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="<?= Tools::url('project/index') ?>">سفارش پروژه</a>
+							<a class="nav-link" href="<?= Tools::url( 'project/index' ) ?>">سفارش پروژه</a>
 						</li>
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -46,12 +49,16 @@
 						<input class="form-control mr-sm-2" type="search" placeholder="جستجو" aria-label="Search">
 						<button class="btn btn-primary my-2 my-sm-0" type="submit">جستجو</button>
 					</form>
-					<div class="form-inline my-2 my-lg-0">
-						<a class="nav-link" href="<?= Tools::url( 'user/register' ) ?>">عضویت</a>
-						<span> / </span>
-						<a class="nav-link" href="<?= Tools::url( 'user/login' ) ?>">ورود</a>
-						<a class="btn btn-danger" href="<?= Tools::url( 'user/logout' ) ?>">خروج</a>
-					</div class="form-inline my-2 my-lg-0">
+					<form action="<?= Tools::url( 'user/logout' ) ?>" method="POST" class="form-inline my-2 my-lg-0">
+						<?php $user = new Users(); ?>
+						<?php if ( ! $user->check() ): ?>
+							<a class="nav-link" href="<?= Tools::url( 'user/register' ) ?>">عضویت</a>
+							<span> / </span>
+							<a class="nav-link" href="<?= Tools::url( 'user/login' ) ?>">ورود</a>
+						<?php else: ?>
+							<input type="submit" name="logout" class="btn btn-danger mr-3" value="خروج" />
+						<?php endif; ?>
+					</form>
 				</div>
 			</nav>
 
